@@ -23,8 +23,8 @@ system's primary modules and their functions will be mentioned first. Next, the 
 primary users in terms of their roles and privileges.
 
 #### Technologies used - 
-•Front End - React JS
-• Backend - Node JS, Express JS
-• Database - Mongo DB
+•Front End - React JS<br>
+• Backend - Node JS, Express JS <br>
+• Database - Mongo DB<br>
 
 Note - The student's github account should be given in brackets e.g. (asiriRepos), this ideally should be your student id
