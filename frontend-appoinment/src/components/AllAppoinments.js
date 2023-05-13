@@ -97,7 +97,7 @@ export default function AllAppoinments() {
                 <table style={{ textAlign: 'center' }}>
                     <thead>
                         <tr>
-                            <th style={{ textAlign: 'center' }}>Appoinment No</th>
+                            <th style={{ textAlign: 'center' }}>appointment No</th>
                             <th style={{ textAlign: 'center' }}>Patient Name</th>
                             <th style={{ textAlign: 'center' }}>Email</th>
                             <th style={{ textAlign: 'center' }}>Doctor Name</th>
