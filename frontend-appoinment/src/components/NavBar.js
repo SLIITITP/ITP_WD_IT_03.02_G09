@@ -9,8 +9,9 @@ function NavBar() {
             {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
             </button> */}
-           <nav className={css.navigation}>              
-  <Link to='/appoinments'>Appoinment</Link>
+           <nav className={css.navigation}>
+    <Link to='/'>Home</Link>                       
+  <Link to='/appoinments'>Appointment</Link>
   <Link to='/clinics'>Clinic</Link>
   <Link to='/employees'>Employee</Link>
   <Link to='/medicines'>Medicine</Link>

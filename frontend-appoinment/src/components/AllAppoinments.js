@@ -75,7 +75,7 @@ export default function AllAppoinments() {
 
     return(
         <div className="container">
-            <h1 style={{textAlign: 'center', fontFamily: 'cursive', fontSize: '50px'}}>All Appointments</h1>
+            <h1 style={{textAlign: 'center', fontFamily: 'cursive', fontSize: '50px'}}>All Appointment Details</h1>
             <div className="container">
                 <div>
                     <button className="button-add" onClick={() => navigate("/add-appoinment")}>

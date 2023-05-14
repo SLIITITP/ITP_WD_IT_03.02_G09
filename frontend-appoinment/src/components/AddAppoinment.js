@@ -94,7 +94,7 @@ export default function AddAppoinment() {
                 </div>
                 <div className="mb-3">
                     <label forHtml="email" className="form-label">Email</label>
-                    <input type="email" className="form-control" id="email" value={email} onChange={(e) => {setEmail(e.target.value)}}/>
+                    <input type="email" className="form-control" id="email" placeholder="Enter Email" value={email} onChange={(e) => {setEmail(e.target.value)}}/>
                 </div>
                 <div className="mb-3">
                     <label forHtml="doctorname" className="form-label">Doctor Name</label>
@@ -118,7 +118,7 @@ export default function AddAppoinment() {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="location" className="form-label">Location</label>
-                    <input type="text" className="form-control" id="location" value={location} onChange={handleLocationChange} />
+                    <input type="text" className="form-control" id="location" placeholder="Enter Location" value={location} onChange={handleLocationChange} />
                 </div>
                 <div className="mb-3">
                     <label forHtml="condition" className="form-label">Condition</label>
