@@ -1,10 +1,13 @@
 import React, {useState} from 'react'
 import axios from 'axios';
 import css from '../styles/Login.module.css';
+import { useNavigate } from 'react-router-dom';
+
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    let navigate = useNavigate();
 
     async function login(e) {
         e.preventDefault();
@@ -14,9 +17,10 @@ function Login() {
             password
         }
 
-        await axios.post("http://localhost:6000/user/login",user)
+        await axios.post("http://localhost:5001/user/login",user)
         .then(() => {
             alert("User Logged Successfully");
+            navigate('/add-appoinment');
         })
         .catch(err => {
             alert(err);

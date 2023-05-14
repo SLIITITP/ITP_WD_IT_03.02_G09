@@ -24,6 +24,31 @@ export default function Header() {
                         <li className="nav-item">
                             <Link to='/add-appoinment' className="nav-link">Add Appoinment</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link to='/clinics' className="nav-link">Clinic</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to='/add-clinic' className="nav-link">Add Clinic</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to='/employee' className="nav-link">Employee</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to='/add-employee' className="nav-link">Add Employee</Link>
+                        </li>
+                        <li className="nav-item">
+              <Link to="/add-medicine" className="nav-link">
+                Add Medicine
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/medicine-categories" className="nav-link">
+                Medicine Categories
+              </Link>
+            </li>
+            <li className="nav-item">
+                            <Link to='/login' className="nav-link">Login</Link>
+                        </li>
                     </ul>
                 </div>
             </div>

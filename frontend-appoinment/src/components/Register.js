@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import css from '../styles/Register.module.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    let navigate = useNavigate();
     
     async function register(e) {
         e.preventDefault();
@@ -16,9 +18,10 @@ export default function Register() {
             password
         }
 
-        await axios.post("http://localhost:6000/user/register",newUser)
+        await axios.post("http://localhost:5001/user/register",newUser)
         .then(() => {
             alert("User Registered Successfully");
+            navigate('/login');
         })
         .catch(err => {
             alert(err);

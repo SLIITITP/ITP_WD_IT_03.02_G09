@@ -80,7 +80,15 @@ export default function UpdateAppoinment() {
                 </div>
                 <div className="mb-3">
                     <label forHtml="doctorname" className="form-label">Doctor Name</label>
-                    <input type="text" className="form-control" id="doctorname" value={doctorname} onChange={(e) => {setDoctorName(e.target.value)}}/>
+                    <select className="form-select" id="doctorname" value={doctorname} onChange={(e) => {setDoctorName(e.target.value)}}>
+                    <option value="">Select a doctor</option>
+                        <option value="Dr. John Doe">Dr. John Doe</option>
+                        <option value="Dr. Jane Smith">Dr. Jane Smith</option>
+                        <option value="Dr. Mark Johnson">Dr. Mark Johnson</option>
+                        <option value="Dr. Saravanan">Dr. Saravanan</option>
+                        <option value="Dr. Sharujan">Dr. Sharujan</option>
+                        {/* Add more doctor options as needed */}
+                </select>
                 </div>
                 <div className="mb-3">
                     <label forHtml="date" className="form-label">Date</label>
