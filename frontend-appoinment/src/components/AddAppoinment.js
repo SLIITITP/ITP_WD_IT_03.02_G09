@@ -16,10 +16,16 @@ export default function AddAppoinment() {
     const [time, setTime] = useState("");
     const [location, setLocation] = useState("");
     const [condition, setCondition] = useState("");
+    const [appoinmentNoError, setAppoinmentNoError] = useState('');
     
     
     async function addAppoinment(e) {
         e.preventDefault();
+
+        if (appoinmentno.trim() === '') {
+            setAppoinmentNoError('Appoinment No is required');
+            return;
+          }
 
         const newAppoinment = {
             appoinmentno,
@@ -67,10 +73,21 @@ export default function AddAppoinment() {
         <div className='container'>
             <br></br>
             <form onSubmit={addAppoinment} className="my-form">
-                <div className="mb-3">
-                    <label forHtml="appoinmentno" className="form-label">Appoinment No</label>
-                    <input type="number" className="form-control" id="appoinmentno" placeholder="Enter Appoinment No" value={appoinmentno} onChange={(e) => {setAppoinmentNo(e.target.value)}}/>
-                </div>
+            <div className="mb-3">
+          <label htmlFor="appoinmentno" className="form-label">Appoinment No</label>
+          <input
+            type="number"
+            className={`form-control ${appoinmentNoError ? 'is-invalid' : ''}`}
+            id="appoinmentno"
+            placeholder="Enter Appoinment No"
+            value={appoinmentno}
+            onChange={e => {
+              setAppoinmentNo(e.target.value);
+              setAppoinmentNoError('');
+            }}
+          />
+          {appoinmentNoError && <div className="invalid-feedback">{appoinmentNoError}</div>}
+        </div>
                 <div className="mb-3">
                     <label forHtml="fullname" className="form-label">Patient Name</label>
                     <input type="text" className="form-control" id="fullname" placeholder="Enter Name" value={fullname} onChange={(e) => {setFullName(e.target.value)}}/>
@@ -82,7 +99,7 @@ export default function AddAppoinment() {
                 <div className="mb-3">
                     <label forHtml="doctorname" className="form-label">Doctor Name</label>
                     <select className="form-select" id="doctorname" value={doctorname} onChange={(e) => {setDoctorName(e.target.value)}}>
-                    <option value="">Select a doctor</option>
+                        <option value="">Select a doctor</option>
                         <option value="Dr. John Doe">Dr. John Doe</option>
                         <option value="Dr. Jane Smith">Dr. Jane Smith</option>
                         <option value="Dr. Mark Johnson">Dr. Mark Johnson</option>

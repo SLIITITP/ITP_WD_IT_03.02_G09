@@ -23,6 +23,7 @@
     z-index: 99;
 }
 
+
 /* .header{
     position: fixed;
     top : 0;
@@ -101,3 +102,38 @@
     background: black ;
     color: white;
 }
+
+@keyframes blinkAnimation {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .blinkButton:hover {
+    animation: blinkAnimation 1.5s infinite;
+  }
+  
+  .outlineButton {
+    border: 2px solid #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #5781ae;
+    border: 2px solid #000;
+  border-radius: 10px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+

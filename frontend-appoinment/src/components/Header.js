@@ -19,10 +19,10 @@ export default function Header() {
                             <Link to='/register' className="nav-link">Register</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to='/appoinments' className="nav-link">Appointment</Link>
+                            <Link to='/appoinments' className="nav-link">Appoinment</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to='/add-appoinment' className="nav-link">Add Appointment</Link>
+                            <Link to='/add-appoinment' className="nav-link">Add Appoinment</Link>
                         </li>
                         <li className="nav-item">
                             <Link to='/clinics' className="nav-link">Clinic</Link>

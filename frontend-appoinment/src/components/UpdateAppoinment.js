@@ -17,9 +17,15 @@ export default function UpdateAppoinment() {
     const [location, setLocation] = useState("");
     const [condition, setCondition] = useState("");
     const [id, setID] = useState("");
+    const [appoinmentNoError, setAppoinmentNoError] = useState('');
     
     async function Update(e) {
         e.preventDefault();
+
+        if (appoinmentno.trim() === '') {
+            setAppoinmentNoError('Appoinment No is required');
+            return;
+          }
 
         const updatedAppoinment = {
             appoinmentno,
@@ -42,6 +48,19 @@ export default function UpdateAppoinment() {
             alert(err);
         })
     }
+
+    const getCurrentDate = () => {
+          const currentDate = new Date();
+          const year = currentDate.getFullYear();
+          let month = (currentDate.getMonth() + 1).toString();
+          let day = currentDate.getDate().toString();
+      
+          // Add leading zero if month/day is a single digit
+          month = month.length === 1 ? '0' + month : month;
+          day = day.length === 1 ? '0' + day : day;
+      
+          return `${year}-${month}-${day}`;
+        };
     const handleTimeChange = (event) => {
         setTime(event.target.value);
       };
@@ -67,9 +86,20 @@ export default function UpdateAppoinment() {
             <br></br>
             <form onSubmit={Update} className="my-form">
             <div className="mb-3">
-                    <label forHtml="appoinmentno" className="form-label">Appoinment No</label>
-                    <input type="number" className="form-control" id="appoinmentno" placeholder="Enter Appoinment No" value={appoinmentno} onChange={(e) => {setAppoinmentNo(e.target.value)}}/>
-                </div>
+          <label htmlFor="appoinmentno" className="form-label">Appoinment No</label>
+          <input
+            type="number"
+            className={`form-control ${appoinmentNoError ? 'is-invalid' : ''}`}
+            id="appoinmentno"
+            placeholder="Enter Appoinment No"
+            value={appoinmentno}
+            onChange={e => {
+              setAppoinmentNo(e.target.value);
+              setAppoinmentNoError('');
+            }}
+          />
+          {appoinmentNoError && <div className="invalid-feedback">{appoinmentNoError}</div>}
+        </div>
                 <div className="mb-3">
                     <label forHtml="fullname" className="form-label">Full Name</label>
                     <input type="text" className="form-control" id="fullname" placeholder="Enter Name" value={fullname} onChange={(e) => {setFullName(e.target.value)}}/>
@@ -81,7 +111,7 @@ export default function UpdateAppoinment() {
                 <div className="mb-3">
                     <label forHtml="doctorname" className="form-label">Doctor Name</label>
                     <select className="form-select" id="doctorname" value={doctorname} onChange={(e) => {setDoctorName(e.target.value)}}>
-                    <option value="">Select a doctor</option>
+                        <option value="">Select a doctor</option>
                         <option value="Dr. John Doe">Dr. John Doe</option>
                         <option value="Dr. Jane Smith">Dr. Jane Smith</option>
                         <option value="Dr. Mark Johnson">Dr. Mark Johnson</option>
